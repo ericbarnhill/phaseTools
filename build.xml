@@ -1,0 +1,28 @@
+<project name="Phase_Tools" default="main" basedir=".">
+    <description>
+        TESTPlugin_ build file
+    </description>
+  <property name="src" location="src" />
+  <property name="build" location="bin" />
+  <property name="dist"  location="dist" />
+ 
+	 <property name="pluginsDir"  location="/home/ericbarnhill/fiji/plugins/" />
+ 
+  <property name="user.name" value="Eric Barnhill" />
+<target name="main" depends="compress" description="Main target">
+	<echo>
+		Building the .jar file.
+	</echo>
+</target>
+ <target name="compress" depends="" description="generate the distribution">
+ 	<jar jarfile="Phase_Tools.jar">
+ 		<fileset dir="." includes="plugins.config" />
+			<fileset dir="${build}" includes="**/*.*" />
+ 		<manifest>
+ 		 	 	      <attribute name="Built-By" value="${user.name}"/>
+ 		</manifest>
+ 	</jar>
+    <copy file="Phase_Tools.jar" toDir="${pluginsDir}" />
+ 	<move file="Phase_Tools.jar" toDir="${dist}" />
+  </target>
+</project>
