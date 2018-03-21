@@ -2,9 +2,9 @@ package com.ericbarnhill.phaseTools;
 
 public class Differences3D {
 
-    public static double[][] get3DDifferences() {
+    public static int[][] getDifferences() {
 
-        double[][] differences3D = new double[][] { 
+        int[][] differences3D = new int[][] { 
             {-1,-1,-1},
             {1,1,1},
             {0,-1,-1},
@@ -32,6 +32,8 @@ public class Differences3D {
             {-1,0,0},
             {1,0,0} 
         };
+        return differences3D;
+
     }
 
 }
